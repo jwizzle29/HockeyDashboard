@@ -1,10 +1,7 @@
 <?php
 require_once('vendor/autoload.php');
-define("PROD_URL", "http://{$_SERVER['SERVER_NAME']}/HockeyDashboard");
-$controller = new App\Api\Controller();
-$controller->sayHi($_SERVER['REQUEST_URI']);
-echo "<br>";
-echo "ooohahatfdsft";
+$controller = new App\Controllers\Router();
+$controller->route($_SERVER['REQUEST_URI']);//sayHi($_SERVER['REQUEST_URI']);
 ?>
 <li><a href="<?php echo PROD_URL ?>/Home">Home</a></li>
 <li><a href="<?php echo PROD_URL ?>/Sales">Sales</a></li>
